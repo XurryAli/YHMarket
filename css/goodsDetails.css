@@ -1,0 +1,450 @@
+
+
+
+
+
+.main-details{
+	width: 1190px;
+	height: 500px;
+	margin:  0 auto;
+	position: relative;
+}
+
+.nav-title{
+	width: 1190px;
+	height: 50px;
+	line-height: 50px;
+}
+.nav-title span{
+	cursor: pointer;
+	margin:0 10px ;
+}
+.nav-title span:hover{
+	color: #e40011;
+}
+.main-details .goodsImg{
+	width: 400px;
+	height: 400px;
+	float: left;
+}
+.main-details .smallImg{
+	position: relative;
+	cursor: pointer;
+	width: 400px;
+	height: 400px;
+	border: 1px solid #dfdfdf;
+	margin-bottom: 10px;
+}
+.main-details .list1{
+	display: none;
+}
+.main-details .bottomImg{
+	position: absolute;
+	width: 400px;
+	height: 75px;
+	top: 460px;
+}
+.main-details .bottomImg li{
+	width: 75px;
+	height: 75px;
+	border: 1px solid #ccc;
+	float: left;
+	margin-left: 10px;
+	cursor: pointer;
+}	
+
+.main-details .bottomImg li img{
+	width: 75px;
+	height: 75px;
+}
+.main-details .bottomImg li:first-child{
+	width: 10px;
+	border: none;
+}	
+.main-details .bottomImg li:first-child i{
+	line-height: 75px;
+	color: #ccc;
+}
+.main-details .bottomImg li:last-child{
+	width: 10px;
+	border: none;
+	float: right;
+}	
+.main-details .bottomImg li:last-child i{
+	line-height: 75px;
+	color: #ccc;
+}
+
+
+
+.rightDetails{
+	width: 770px;
+	height: 489px;
+	float: right;
+	/*border: 1px solid #ccc;*/
+}
+.rightDetails p{
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 32px;
+	color: #545454;
+}
+.rightDetails .oPrice{
+	width: 770px;
+	height: 50px;
+	background: #efefef;
+	line-height: 50px;
+}
+.main-details .rightDetails .oPrice span{
+	letter-spacing: 32px;
+	font-size: 12px;
+	color: #999;
+	vertical-align: middle;
+	margin-left: 20px;
+}
+.main-details .rightDetails .oPrice i{
+	vertical-align: middle;
+	color: #E40011;
+	font-size: 28px;
+	max-height: 99999px;
+	font-family: "Microsoft YaHei","arial";
+}
+.main-details .rightDetails .buyNum{
+	width: 770px;
+	height: 50px;
+	margin-top:10px ;
+}
+.main-details .rightDetails .buyNum b{
+	display: block;
+	float: left;
+	line-height: 32px;
+	color: #999;
+	margin-top: 10px;
+}
+.main-details .rightDetails .buyNum input{
+	padding: 0;
+	width: 38px;
+	height: 32px;
+	text-align: center;
+	display: block;
+	float: left;
+	margin-top: 10px;
+}
+.main-details .rightDetails .buyNum a{
+	line-height: 32px;
+	display: block;
+	float: left;
+	padding:0 10px;
+	border: 1px solid #e4e4e4;
+	margin-top: 10px;
+}
+
+.main-details .rightDetails .buyNum .minremind{
+	display: none;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	color: #E40011;
+	float: left;
+	margin-left: 20px;
+}
+
+
+
+.main-details .rightDetails .delivery{
+	width: 770px;
+	height: 50px;
+	margin-top:10px ;
+	line-height: 50px;
+	color: #545454;
+}
+.main-details .rightDetails .delivery b{
+	color: #999;
+	letter-spacing: 7px;
+}
+.main-details .rightDetails .getBuy{
+	width: 770px;
+	height: 38px;
+	margin-top: 10px;
+}
+.main-details .rightDetails .getBuy div{
+	width: 118px;
+	height: 36px;
+	background: #E40011;
+	text-align: center;
+	line-height: 38px;
+	color: white;
+	float: left;
+	margin-right: 10px;
+	cursor: pointer;
+	font-family: "微软雅黑";
+	font-size: 16px;
+}
+.main-details .rightDetails .getBuy div i{
+	margin-right: 10px;
+}
+.main-details .rightDetails .getBuy div:last-child{
+	height: 34px;
+	background: #f1f0f0;
+	border: 1px solid #dfdfdf;
+	color: black;
+}
+.main-details .rightDetails .getBuy div:last-child i{
+	color: #d9d9d9;
+}
+.main-details .rightDetails .support{
+	width: 770px;
+	height: 50px;
+	margin-top:10px ;
+}
+.main-details .rightDetails .support b{
+	line-height: 50px;
+	display: block;
+	float: left;
+	color: #999;
+}
+.main-details .rightDetails .support div{
+	line-height: 50px;
+	width: 90px;
+	height: 50px;
+	float: left;
+	margin-left: 15px;
+}
+.main-details .rightDetails .support .halfDay i{
+	vertical-align: middle;
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	background: url(../img/surport1.png) no-repeat;
+	margin-right: 10px;
+}
+.main-details .rightDetails .support .selflift i{
+	vertical-align: middle;
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	background: url(../img/surport2.png) no-repeat;
+	margin-right: 10px;
+}
+.main-details .rightDetails .socLink{
+	width: 770px;
+	height: 50px;
+	margin-top:10px ;
+}
+.main-details .rightDetails .socLink div{
+	float: left;
+	margin: 15px 10px 0 0;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+.main-details .rightDetails .socLink b{
+	line-height: 50px;
+	display: block;
+	float: left;
+	color: #999;
+}
+.main-details .rightDetails .socLink .shareIcon{
+	background: url(../img/jiathis_ico.png) no-repeat;
+	background-position-y: -63px;
+}
+.main-details .rightDetails .socLink .shareIcon1{
+	background: url(../img/jiathis_ico.png) no-repeat;
+	background-position-y: -96px;
+}
+.main-details .rightDetails .socLink .shareIcon2{
+	background: url(../img/jiathis_ico.png) no-repeat;
+	background-position-y: -143px;
+}
+.main-details .rightDetails .socLink .shareIcon3{
+	background: url(../img/jiathis_ico.png) no-repeat;
+	background-position-y: -1809px;
+}
+.main-details .rightDetails .socLink .shareIcon4{
+	background: url(../img/jiathis_ico.png) no-repeat;
+	background-position-y: -1200px;
+}
+.main-details .rightDetails .socLink .shareIcon5{
+	
+}
+
+
+
+.botStructure{
+	width: 1190px;
+	height: 2000px;
+	margin: 60px auto;
+}
+
+.left-list{
+	float: left;
+	width: 198px;
+	height: 2000px;
+	border: 1px solid #e6e6e6;
+}
+.left-list ul li:first-child{
+	width: 198px;
+	height: 33px;
+	background: #f1f0f0;
+	color: #545454;
+	line-height: 33px;
+	text-align: center;
+}
+.left-list ul li div{
+	width: 90px;
+	height: 90px;
+	float: left;
+	
+}
+.left-list ul li:not(:first-child){
+	padding: 20px 2px;
+}
+.left-list ul li img{
+	display: block;
+	float: left;
+	width: 80px;
+	height: 80px;
+	margin-left: 2px;
+}
+.left-list ul li a{
+	color: black;
+	display: block;
+	width: 100px;
+	height: 50px;
+	float: left;
+	line-height: 18px;
+}
+.left-list ul li a:hover{
+	color: #E40011;
+}
+.left-list ul li i{
+	color: #E40011;
+}
+
+
+.intruduce{
+	float: right;
+	width: 950px;
+	height: 2000px;
+	position: relative;
+	/*border:1px solid #ccc ;*/
+}
+.intruduce .topItd{
+	width: 950px;
+	height: 80px;
+	background: #f2f2f2;
+}
+.intruduce .topItd p{
+	line-height: 25px;
+	float: left;
+	margin:8px 60px;
+	color: #545454;
+}
+.centerImg img{
+	width: 950px;
+	height: 590px;
+}
+
+.comments{
+	width: 950px;
+	height: 34px;
+	background: #f2f2f2;
+	margin-top: 27px;
+}
+.comments p{
+	float: left;
+	margin:0 20px;
+	line-height: 34px;
+}
+.comments p a{
+	color: #545454;
+}
+
+.commentsGet{
+	width: 950px;
+	height: 100px;
+}
+.commentsGet div{
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin:0 10px;
+}
+.commentsGet div p:first-child{
+	font-size: 35px;
+	font-weight: bold;
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #545454;
+}
+.commentsGet div p:last-child{
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #545454;
+}
+.commentsGet ul{
+	width: 320px;
+	height: 100px;
+	display: block;
+	float: left;
+	margin:20px 50px;
+}
+.commentsGet ul li{
+	display: block;
+	width: 320px;
+	height: 20px;
+}
+.commentsGet ul div{
+	width:200px ;
+	height: 10px;
+	background: #e1e1e1;
+	float: left;
+	margin-top: 4px;
+}
+.commentsGet ul li:first-child div{
+	background: #E40011;
+}
+.commentsGet ul span{
+	display: block;
+	width: 30px;
+	height: 20px;
+	line-height: 20px;
+	float: left;
+}
+.userComments{
+	margin-top: 20px;
+}
+.userComments li{
+	width: 950px;
+	height: 100px;
+	border-bottom: 1px solid #f2f2f2;
+	
+}
+.userComments li p{
+	color: #ccc;
+	line-height: 30px;
+	margin:15px 30px;
+}
+.promise{
+	position: absolute;
+	bottom: 0;
+	width: 950px;
+	height: 200px;
+	border: 1px solid #ccc;
+	margin:0 ;
+}
+.promise div{
+	line-height: 30px;
+	color: #545454;
+	margin-left: 20px;
+	font-weight: bold;
+}
+.promise p{
+	line-height: 20px;
+	color: #545454;
+	margin-left: 20px;
+}

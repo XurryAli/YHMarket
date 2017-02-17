@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>伊利味可滋香蕉牛奶240ml*12</title>
+		 <!--css framework -->
+		<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-main.css" />
+		<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main-page.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/css/jqzoom.css" />
+		<!-- auto js -->
+		<link rel="stylesheet" type="text/css" href="common/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="common/page-common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/goodsDetails.css"/>
+		
+		<!--js plugin -->
+		<script type="text/javascript" src="libs/jquery/jquery-2.1.1.min.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/jquery.validate.min.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/jquery.validate.extend.methods.js" ></script>
+		<script type="text/javascript" src="libs/jquery-confirm/jquery-confirm.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/messages_zh.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/jquery.metadata.js" ></script>
+		<script type="text/javascript" src="js/area.js" ></script>
+		<script type="text/javascript" src="libs/js/jquery.jqzoom.min.js" ></script>
+		<!-- auto js -->
+		<script type="text/javascript" src="common/page-common.js" ></script>
+		<script type="text/javascript" src="js/main-page.js" ></script>
+		<script type="text/javascript" src="common/cookie.js" ></script>
+		
+		
+		
+		<script type="text/javascript">
+			
+			$(function() {
+			//放大功能
+			  	$(".smallImg").jqueryzoom({
+				  xzoom: 400,//放大区域宽度
+				  yzoom: 400,//放大区域高度
+				  preload: 1,//是否显示预加载
+				  offset:10,//放大区域偏离小图的距离
+				  position: "right",//放大区域显示的位置（left,right）
+				  lens:true //是否显示小图上的透明区域
+	 	 	});
+			
+			$('.bottomImg li').not(".dirIcon").mouseenter(function(){
+//				console.log($(this).index())
+				
+				$(this).css({border:"1px solid #e40011"})
+				//获取当前下标
+				var index = $(this).index() - 1;
+//				console.log(index)
+				//显示当前对应下标的图片
+				$('.goodsImg div').eq(index).show();
+				//隐藏其它图片
+				$('.goodsImg div').eq(index).siblings().hide();
+				
+			}).mouseleave(function(){
+				$(this).css({border:"1px solid #ccc"})
+			})
+			
+			$('.buyNow').click(function(){
+				window.location.href = "shopingcar.html"
+			})
+			
+			
+			
+				$('.increment').click(function(){
+				var $value = parseInt($('.addNum').val())
+				$('.addNum').val($value + 1)
+				console.log(typeof $('.addNum').val())
+				})
+				
+				$('.decrement').click(function(){
+					var $value = parseInt($('.addNum').val())
+					$('.addNum').val($value - 1)
+					if($value <= 1 ){
+						$('.addNum').val(1)
+						$('.minremind').show()
+					}
+				})
+			
+			
+			//=======================  加入购物车     ==============================>	
+			$('.joinCart').click(function(){
+				
+				var GOODSNAME = "GOODSNAME";  //cookie记录商品名字的key
+				var GOODSPRICE = "GOODSPRICE";  //cookie记录商品价格的key；
+				var GOODSIMG = "GOODSIMG"; //cookie记录商品名图片路径
+				
+				var goodsNameStr = getCookie(GOODSNAME);
+				var goodspriceStr = getCookie(GOODSPRICE);
+				var goodsImgStr = getCookie(GOODSIMG);
+				
+				
+				var goodsNameArr = [];
+				var goodsPriceArr = [];
+				var goodsImgArr = [];
+				
+				if(goodsNameStr){  //判断是否存在数据
+					goodsNameArr = goodsNameStr.split("&");
+					goodsPriceArr = goodspriceStr.split("&");
+					goodsImgArr = goodsImgStr.split("&");
+				}
+				
+				var $getSrc = $(".list0").children("img")[0].src;
+				var $getTitle = $('.rightDetails').children("p").text();
+				var $getPrice = $(".oPrice").children("i").children("em").text();
+						console.log("===>"+$getSrc + "===>" + $getTitle + "====>" + $getPrice)
+				
+				function saveGoods($getTitle,$getPrice,$getSrc){
+					goodsNameArr.push($getTitle);
+					goodsPriceArr.push($getPrice);
+					goodsImgArr.push($getSrc);
+					
+					//将数组转化成字符串，存到cookie里面
+					var temNameStr = goodsNameArr.join("&");
+					var temPriceStr = goodsPriceArr.join("&");
+					var temImgStr = goodsImgArr.join("&");
+					
+					//更新本地cookie
+					removeCookie(GOODSNAME);
+					removeCookie(GOODSPRICE);
+					removeCookie(GOODSIMG);
+					
+					var day = new Date();
+					day.setDate(day.getDate()+15);
+					
+					setCookie(GOODSNAME,temNameStr,day);
+					setCookie(GOODSPRICE,temPriceStr,day);
+					setCookie(GOODSIMG,temImgStr,day);
+					
+				}
+				
+					saveGoods($getTitle,$getPrice,$getSrc)
+				
+				
+			})
+			
+			
+			
+			});
+		
+		</script>
+		
+		
+	</head>
+	<body>
+		
+		<div class="header-load"></div>
+		
+		<div class="main-details">
+			
+			<div class="nav-title">
+				<span>主页</span><i class="fa fa-angle-right"></i>
+				<span>食品、饮料、酒水</span><i class="fa fa-angle-right"></i>
+				<span>牛奶/乳品</span><i class="fa fa-angle-right"></i>
+				<span>加味奶</span><i class="fa fa-angle-right"></i>
+				<span>伊利味可滋香蕉牛奶240ml*12</span></i>
+			</div>
+			
+			<div class="goodsImg">
+			
+				<div class="smallImg jqzoom list0">
+					<img src="img/goodsimg/goodsdetails1.jpg" jqimg="img/goodsimg/goodsdetails1Max.jpg" />
+				</div>
+				
+				<div class="smallImg jqzoom list1">
+					<img src="img/goodsimg/goodsdetails2.jpg" jqimg="img/goodsimg/goodsdetails2Max.jpg" />
+				</div>
+				
+				<div class="smallImg jqzoom list1">
+					<img src="img/goodsimg/goodsdetails3.jpg" jqimg="img/goodsimg/goodsdetails3Max.jpg" />
+				</div>
+			
+			</div>
+			
+			
+			<div class="rightDetails">
+				
+				<p>伊利味可滋香蕉牛奶240ml*12</p>
+				
+				<div class="oPrice"><span>原价</span>：<i>￥<em>60.00</em></i></div>
+				
+				<div class="buyNum">
+					<b>购买数量：</b>
+					<div class="quantity-form">
+						<a class="decrement" href="javascript:void(0);">-</a>
+						<input class="addNum" type="text" value="1"/>
+						<a class="increment" href="javascript:void(0);">+</a>
+					</div>
+					<div class="minremind">*最少购买数量为一件</div>
+				</div>
+				
+				<div class="delivery">
+					<b>送货至：</b>
+					<span>福建省福州市鼓楼区</span>
+					<i>该地区暂不支持配送</i>
+				</div>
+				
+				<div class="getBuy">
+					<div class="buyNow">立即购买</div>
+					<div class="joinCart"><i class="fa fa-shopping-cart"></i>加入购物车</div>
+					<div class="collection"><i class="fa fa-heart-o"></i>收藏</div>
+				</div>
+				
+				<div class="support">
+					<b>支持服务：</b>
+					<div class="halfDay"><i></i>半日达</div>
+					<div class="selflift"><i></i>门店自提</div>
+				</div>
+				
+				<div class="socLink">
+					<b>分享到：</b>
+					<div class="shareIcon"><a href="http://qzone.qq.com"></a></div>
+					<div class="shareIcon1"><a href="http://qzone.qq.com"></a></div>
+					<div class="shareIcon2"><a href="http://qzone.qq.com"></a></div>
+					<div class="shareIcon3"><a href="http://qzone.qq.com"></a></div>
+					<div class="shareIcon4"><a href="http://qzone.qq.com"></a></div>
+					<div class="shareIcon5"><a href="http://qzone.qq.com"></a></div>
+				</div>
+				
+			</div>
+			
+			
+			<!--=====================  底部小图    =================-->
+			<div class="bottomImg">
+				<ul>
+					<li class="dirIcon"><i class="fa fa-chevron-left"></i></li>
+					<li><img src="img/goodsimg/goodsdetails1.jpg" /></li>
+					<li><img src="img/goodsimg/goodsdetails2.jpg" /></li>
+					<li><img src="img/goodsimg/goodsdetails3.jpg" /></li>
+					<li class="dirIcon"><i class="fa fa-chevron-right"></i></li>
+				</ul>
+			</div>
+		</div>
+			
+		<div class="botStructure">
+		
+			<div class="left-list">
+				<ul>
+					<li>热卖推荐</li>
+					<li>
+						<div>
+							<img src="img/goodsimg/detailsgoods1.jpg" />
+						</div>
+						<div>
+							<a href="javascript:;">ABC亲柔立围日用超级薄卫生巾K83 8片</a>
+							<i>￥10.5</i>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/goodsimg/detailsgoods2.jpg" />
+						</div>
+						<div>
+							<a href="javascript:;">田趣原味牛肉粒110G</a>
+							<i>￥10.5</i>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/goodsimg/detailsgoods3.jpg" />
+						</div>
+						<div>
+							<a href="javascript:;">金兰酱油1L</a>
+							<i>￥10.5</i>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/goodsimg/detailsgoods4.jpg" />
+						</div>
+						<div>
+							<a href="javascript:;">贝奇脆萝卜108g</a>
+							<i>￥10.5</i>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/goodsimg/detailsgoods5.jpg" />
+						</div>
+						<div>
+							<a href="javascript:;">日康双层自动学饮杯RK3430</a>
+							<i>￥10.5</i>
+						</div>
+					</li>
+				</ul>
+			</div>
+			
+			
+			<div class="intruduce">
+				<div class="topItd">
+					<p>商品名称：伊利味可滋香蕉牛奶240ml*12</p>
+					<p>商品规格：240ml*12</p>
+					<p>商品产地：内蒙呼和浩特</p>
+					<p>商品毛重：3000.0g</p>
+					<p>品牌: 伊利</p>
+				</div>
+				<div class="centerImg"><img src="img/goodsimg/PC_product.jpg" /></div>
+				<div class="comments">
+					<p><a href="javascript:;">全部</a></p>
+					<p><a href="javascript:;">好评(5)</a></p>
+					<p><a href="javascript:;">中评(0)</a></p>
+					<p><a href="javascript:;">差评(0)</a></p>
+				</div>
+				<div class="commentsGet">
+					<div>
+						<p>0.1%</p>
+						<p>好评度</p>
+					</div>
+					<ul>
+						<li>
+							<span>好评</span>
+							<div></div>
+							<span>100%</span>
+						</li>
+						<li>
+							<span>中评</span>
+							<div></div>
+							<span>0%</span>
+						</li>
+						<li>
+							<span>差评</span>
+							<div></div>
+							<span>0%</span>
+						</li>
+					</ul>
+				</div>
+				<div class="userComments">
+					<ul>
+						<li><p>很好</p><p>用户：135********</p></li>
+						<li><p>第一次买，感觉一般</p><p>用户：185********</p></li>
+						<li><p>还不错</p><p>用户：137********</p></li>
+						<li><p>呵呵哒</p><p>用户：182********</p></li>
+						<li><p>给别人买的</p><p>用户：158********</p></li>
+						<li><p>还行</p><p>用户：156********</p></li>
+						<li><p>这味道。。。</p><p>用户：153********</p></li>
+						<li><p>下次试试别的</p><p>用户：188********</p></li>
+					</ul>
+				</div>
+				<div class="promise">
+					<div>服务承诺</div>
+					<p>
+						网站所售产品均为厂商正品，如有任何问题可与我们客服人员联系，我们会在第一时间跟您沟通处理。我们将争取以最低的价格、最优的服务来满足您最大的需求。
+					</p>
+					<div>温馨提示</div>
+					<p>验货签收时请您与配送人员当面核对：商品及配件、商品金额及数量、发票（如有）、赠品（如有）等；如存在包装破损、商品错误、商品短缺、商品存在质量问题等影响签收的 因素，您可以拒收全部商品（相关的赠品，配件或捆绑商品和发票应一起当场拒收）。
+						由于部分商品包装更换较为频繁，因此您收到的货品有可能与图片不完全一致，请您以收到的商品实物为准，同时我们会尽量做到及时更新，由此给您带来不便多多谅解，如有任 何问题可与我们客服人员联系，谢谢！
+					</p>
+				</div>
+			</div>
+			
+			
+		
+		</div>
+		
+		
+		<div class="sidebar"></div>
+	
+		<div class="footer-load"></div>
+	</body>
+</html>

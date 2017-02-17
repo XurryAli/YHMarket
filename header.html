@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="libs/js/jquery.cookie.js"></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				$(window).scroll(function () {
+//				//获取当前滚动条滚动的距离
+		        var $scrollTop = $(document).scrollTop()
+//		        //$(window).height()获取当前窗体的高度
+//		        //$(document).height()获取当前文档的高度
+		       	if($scrollTop >= 197){
+		       		//为头部以及搜索框添加class用于固定在页面顶部
+		       		$('.header').addClass("fixedNav");
+		       		
+		       		$('.search-product').addClass("fixedInput");
+		       		
+		       		$('.total-classify').addClass("fixedClassify");
+		       		
+		       		$('.shop-classify').addClass("fixedClassify");
+		       		
+		       		$('.classify-details').addClass("fixedDetalis")
+		       		$('.classify-details').css({position:"fixed"})
+		       		//隐藏轮播图中的列表菜单
+		       		$('.shop-classify').hide()
+		       		
+		       		//给“全部分类”添加鼠标 移入移出事件
+		       		$('.total-classify').mouseenter(function(){
+		       			$('.shop-classify').show()
+		       		}).mouseleave(function(){
+		       			$('.shop-classify').hide()
+		       		})
+		       		
+		       		//给一级商品菜单添加鼠标移入移出事件让其继续显示
+		       		$('.shop-classify').mouseenter(function(){
+		       			$('.shop-classify').show()
+		       		}).mouseleave(function(){
+		       			$('.shop-classify').hide()
+		       		})
+		       		
+		       		
+		       		$('.classify-details').mouseleave(function(){
+		       			$('.shop-classify').hide();
+		       		})
+		       		
+		       	}else{
+		       		//取消鼠标移入移出事件的绑定
+		       		$('.total-classify').unbind("mouseenter").unbind("mouseleave")
+		       		$('.shop-classify').unbind("mouseenter").unbind("mouseleave")
+		       		$('.classify-details').unbind("mouseleave").mouseleave(function(){
+		       			$('.classify-details').hide()
+		       		})
+		       		//移除头部以及搜索框的固定class
+		       		$('.header').removeClass("fixedNav")
+		       		$('.search-product').removeClass("fixedInput")
+		       		$('.total-classify').removeClass("fixedClassify")
+		       		
+		       		//恢复显示一级商品菜单
+		       		$('.shop-classify').show()
+		       		
+		       		//移除商品详情一二级菜单的固定class
+		       		$('.shop-classify').removeClass("fixedClassify");
+		       		
+		       		$('.classify-details').removeClass("fixedDetalis").css({position:"absolute"})
+		       		
+		       	}
+//		       
+				//判断什么时候出现回到顶部的按钮
+				if($scrollTop > 0){
+					$('.sidebar').show()
+				}else{
+					$('.sidebar').hide();
+				}
+				
+				
+				//====================   回 到 顶 部 事 件 =========================》》》
+				
+				$('.sidebar a').eq(5).click(function(){
+					console.log($scrollTop)
+			       $(document).animate({scrollTop:0},500);
+			        return false;
+				})
+				
+		       
+		    	});
+						
+				
+				//=================   手机永辉   ================>>>
+				$('.mobile-YH').mouseenter(function(){
+					$(this).css({background:"white"})
+					$('.mobile-qr').show()
+				}).mouseleave(function(){
+					$('.mobile-qr').hide()
+					$(this).css({background:"#f2f2f2"})
+					
+				})
+						
+						
+						
+						
+						
+				var checkBoxLeft = $('.search-checkbox').offset().left;
+				var checkBoxTop = $('.search-checkbox').offset().top;
+				var checkBoxHeight = $(".search-checkbox").height();
+				var oTop = checkBoxTop + checkBoxHeight;
+				$('.search-checkbox').unbind('click').click(function(){
+					if($('.city-select').css("display") == 'none'){
+						$('.search-checkbox').css({background:'#fafafa'})
+						$('.select-icon').css({backgroundPosition:'0 -25px'})
+						$('.city-select').css({position:"absolute",left:checkBoxLeft,top:oTop}).show()
+					}else{
+						$('.search-checkbox').css({border:"none",background:'white'})
+						$('.select-icon').css({backgroundPosition:'0 -32px'})
+						$('.city-select').hide()
+					}
+					
+				})
+				
+				$('.close').unbind('click').click(function(){
+					$('.search-checkbox').css({border:"none",background:'white'})
+					$('.select-icon').css({backgroundPosition:'0 -32px'})
+					$('.city-select').hide()
+				})
+				
+				$('.search-shopcar').unbind('mouseenter').mouseenter(function(){
+					$('.shopping-list').show()
+				}).mouseleave(function(){
+					$('.shopping-list').hide()
+				})
+					
+				$('.shopping-list').unbind('mouseenter').mouseenter(function(){
+					$('.shopping-list').show()
+				}).mouseleave(function(){
+					$('.shopping-list').hide()
+				})
+				
+				
+				//=========================  侧边栏事件  ===============> 
+				
+				$('.sidebar img').eq(2).mouseenter(function(){
+					$(this).attr("src","img/fixed4.png");
+				}).mouseleave(function(){
+					$(this).attr("src","img/fixed3.png");
+				})
+				
+				$('.sidebar img').eq(1).mouseenter(function(){
+					$(this).attr("src","img/fixed6.png");
+				}).mouseleave(function(){
+					$(this).attr("src","img/fixed2.png");
+				})
+				
+				$('.sidebar img').eq(0).mouseenter(function(){
+					$(this).attr("src","img/fixed5.png");
+				}).mouseleave(function(){
+					$(this).attr("src","img/fixed1.png");
+				})
+				
+				$('.sidebar img').eq(3).mouseenter(function(){
+					$('.qr-triangle').show();
+					$('.qr-app').show();
+				}).mouseleave(function(){
+					$('.qr-triangle').hide();
+					$('.qr-app').hide();
+				})
+				
+				$('.qr-app').mouseenter(function(){
+					$('.qr-triangle').show();
+					$('.qr-app').show();
+				}).mouseleave(function(){
+					$('.qr-triangle').hide();
+					$('.qr-app').hide();
+				})
+				
+				$('.qr-triangle').mouseenter(function(){
+					$('.qr-triangle').show();
+					$('.qr-app').show();
+				}).mouseleave(function(){
+					$('.qr-triangle').hide();
+					$('.qr-app').hide();
+				})
+				
+				var getuser = $.cookie("username")
+				if(getuser){
+					$('.user').text(getuser)
+					$('.user').css({color:"#e40011"})
+				}
+				
+				
+				
+				
+				
+				
+			})
+		</script>
+		
+	</head>
+	<body>
+		
+		<div class="header">
+			<div class="header-link">
+				<ul class="header-left">
+					<li>Hi,欢迎来永辉超市</li>
+					<li><a href="login.html" class="user">登录</a></li>
+					<li><a href="register.html">免费注册</a></li>
+				</ul>
+				<ul class="header-right">
+					<li><a href="javascript:;">我的永辉</a></li>
+					<li class="mobile-YH"><a href="#">手机永辉</a></li>
+					<li><a href="javascript:;">帮助中心</a></li>
+				</ul>
+				
+				<div class="mobile-qr"><img src="img/Qr-code3.jpg" /></div>
+			</div>
+		
+			
+		</div>
+		
+		<div class="search">
+			
+			<div class="search-logo">
+				<a href="main-page.html"><img src="img/logo.jpg" /></a>
+			</div>
+			
+			<div class="search-checkbox">
+				<a href="javascript:;">
+					<span>福州市<div class="select-icon"></div></span>
+				</a>
+			</div>
+			
+			<div class="city-select">
+				<i class="close"></i>
+				<h3 class="choose-address">选择收货地址</h3>
+				<div class="address-options">
+					<select id="s_province" name="s_province"></select>
+					<select  id="s_city" name="s_city" ></select>
+					<select id="s_county" name="s_county"></select>
+					<script type="text/javascript">area_init();</script>
+				</div>
+				<div class="input-address">
+					<input type="text" name="input-address" id="input-address" placeholder="请输入详细地址" />
+				</div>
+				<button class="submit-address">提交</button>
+			</div>
+			
+			<div class="search-product">
+				<i class="icon-search"></i><input type="text" name="search-product" id="search-product" placeholder="请输入关键字" /><button class="search-button">搜索</button>
+				<div class="search-shopcar">
+					<i class="icon-shop-car"></i>
+					<a href="shopingcar.html">购物车<span id="carTotalItems">0</span>件</a>
+				</div>
+				
+				<ul class="shopping-list">
+					<li class="empty-car">空购物车</li>
+					<li class="shopping-list-total">共计<span id="popup_cartTotalItems">0</span>件商品 订单合计：￥<span id="price-total">0.00</span></li>
+				</ul>
+			</div>
+			
+			<div class="search-right"></div>
+			
+		</div>
+		
+		<div class="main-nav">
+			<ul class="nav-classify">
+				<li class="total-classify"><a href="allgoods.html">全部商品分类</a></li>
+				<li>首页</li>
+				<li>全球购</li>
+				<li>永辉钱包</li>
+			</ul>
+		</div>
+		
+		<div class="sidebar">
+			<a  href="shopingcar.html"><div><img src="img/fixed1.png" /></div></a>
+			<a  href="javascript:;"><div><img src="img/fixed2.png" /></div></a>
+			<a  href="javascript:;"><div><img src="img/fixed3.png" /></div></a>
+			<a  href="javascript:;"><div><img src="img/bottom-fixednav4.png" /></div></a>
+			<a  href="#"><div><img src="img/bottom-fixednav5.png" /></div></a>
+			
+			<div class="qr-app">
+				<img src="img/Qr-code1.png" />
+				<span>永辉手机APP</span>
+			</div>
+			<div class="qr-triangle">
+				<img src="img/bottom-fixednav7.png" />
+			</div>
+		</div>
+		
+		
+		
+		
+	</body>
+</html>

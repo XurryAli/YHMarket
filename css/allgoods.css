@@ -1,0 +1,300 @@
+
+
+
+.main-details{
+	width: 1190px;
+	height: 1226px;
+	margin:  0 auto;
+}
+.main-details-list{
+	position: relative;
+	width: 1190px;
+	height: 1268px;
+}
+.nav-title{
+	width: 1190px;
+	height: 50px;
+	line-height: 50px;
+}
+.nav-title span{
+	margin:0 20px ;
+}
+.left-list{
+	float: left;
+	width: 198px;
+	height: 1224px;
+	border: 1px solid #e6e6e6;
+}
+.left-list ul li:first-child{
+	width: 198px;
+	height: 33px;
+	background: #f1f0f0;
+	color: #545454;
+	line-height: 33px;
+	text-align: center;
+}
+.left-list ul li div{
+	width: 90px;
+	height: 90px;
+	float: left;
+	
+}
+.left-list ul li:not(:first-child){
+	padding: 20px 2px;
+}
+.left-list ul li img{
+	display: block;
+	float: left;
+	width: 80px;
+	height: 80px;
+	margin-left: 2px;
+}
+.left-list ul li a{
+	color: black;
+	display: block;
+	width: 100px;
+	height: 50px;
+	float: left;
+	line-height: 18px;
+}
+.left-list ul li a:hover{
+	color: #E40011;
+}
+.left-list ul li i{
+	color: #E40011;
+}
+
+
+
+
+
+
+.right-list{
+	float: right;
+	width: 969px;
+	height: 1226px;
+}
+.right-list .right-title ul{
+	width: 969px;
+	height: 32px;
+	border: 1px solid #dcdcdc;
+}
+.right-list .right-title ul li{
+	float: left;
+	margin:0 20px;
+}
+.right-list .right-title ul li:first-child{
+	background: #f5f5f5;
+	margin:0;
+	padding: 0 30px;
+}
+.right-list .right-title ul li a{
+	color: black;
+	line-height: 32px;
+}
+.right-list .right-title ul li:not(:first-child) a:hover{
+	color: #e40011;
+}
+
+.right-list .right-sorting{
+	float: right;
+	width: 969px;
+	height: 1226px;
+}
+.right-list .right-sorting ul:first-child{
+	width: 969px;
+	height: 32px;
+	border: 1px solid #dcdcdc;
+	margin-top: 10px;
+}
+.right-list .right-sorting ul li{
+	float: left;
+	line-height: 33px;
+	border-right:  1px solid #dcdcdc;
+	padding: 0 10px;
+	cursor: pointer;
+}
+.right-list .right-sorting ul li:first-child{
+	color: #E40011;
+	background: #f5f5f5;
+}
+.right-list .right-sorting ul li:hover{
+	color: #e40011;
+}
+.right-list .right-sorting ul li.chose input{
+	width: 68px;
+	height: 16px;
+	border:1px solid #ccc;
+}
+.right-list .right-sorting ul li.chose .butn{
+	width: 60px;
+	height: 24px;
+	border: none;
+	background: #e40011;
+	color: white;
+	cursor: pointer;
+}
+.right-list .right-sorting ul li.chose{
+	color: #545454;
+	border: none;
+}
+.right-list .right-sorting ul li.chose .check{
+	vertical-align: middle;
+	width: 15px;
+	height: 15px;
+	margin: 0 5px;
+	padding: 0 0;
+	cursor: pointer;
+}
+.right-list .right-sorting ul li.chose span{
+	vertical-align: middle;
+	margin-right: 10px;
+	cursor:auto;
+}
+.right-list .right-sorting ul li.chose span:last-child{
+	margin-left: 20px;
+}
+.right-list .right-sorting ul li:last-child{
+	cursor: pointer;
+	border: none;
+	padding: none;
+}
+.right-list .right-sorting ul li a{
+	color: #ccc;
+	margin:0 10px;
+}
+.right-list .right-sorting ul li a:last-child{
+	color: #ff8c19;
+}
+
+.right-list .right-sorting .products1{
+	float: right;
+	width: 969px;
+	height: 1134px;
+	margin-top: 10px;
+	border: 1px solid #CCC;
+}
+.right-list .right-sorting .products1 ul{
+	width: 949px;
+	height: 1114px;
+	margin: 10px auto;
+	border: none;
+}
+.right-list .right-sorting .products1 ul li{
+	border: none;
+	width: 200px;
+	height: 336px;
+	margin:15px 7px;
+	background: white;
+	border: 1px solid #f5f5f5;
+}
+.right-list .right-sorting .products1 ul li:last-child{
+	margin-right: 0;
+}
+.right-list .right-sorting .products1 ul img{
+	width: 200px;
+	height: 200px;
+	margin-top: 10px;
+}
+.right-list .right-sorting .products1 ul li i{
+	display: block;
+	color: #E40011;
+	font-weight: bold;
+}
+.right-list .right-sorting .products1 ul li i p{
+	width: 30px;
+	height: 32px;
+	float: left;
+}
+.right-list .right-sorting .products1 ul li b{
+	width: 100px;
+	height: 32px;
+	display: block;
+}
+.right-list .right-sorting .products1 ul li span a{
+	display: block;
+	color: #545454;
+	line-height: 20px;
+}
+.right-list .right-sorting .products1 ul li span a:hover{
+	color: #E40011;
+}
+.right-list .right-sorting .products1 ul li{
+	color: #005aa0;
+}
+.right-list .right-sorting .products1 ul li div{
+	float: right;
+	background-color: #e0221c;
+	line-height: 24px;
+    color: #fff;
+    padding: 0 6px;
+    opacity: 0;
+    filter: Alpha(opacity=0)
+}
+.shadow{
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+.main-details .main-details-list .paging{
+	position: absolute;
+	bottom: 0;
+	width: 1190px;
+	height: 32px;
+}
+#wrapper,#pagination-demo1,.paginationjs,.paginationjs-pages{
+	float: right;
+	width: 600px;
+	height: 32px;
+}
+.paginationjs-pages{
+	position: relative;
+}
+.paginationjs-pages ul{
+	position: absolute;
+	right: 0;
+	
+}
+.main-details .main-details-list .paging .pagingNum span{
+	line-height: 30px;
+	padding: 10px 14px; 
+	border: 1px solid #f5f5f5;
+	border-right: none ;
+	cursor: pointer;
+}
+.main-details .main-details-list .paging .pagingNum span:first-child{
+	background: #E40011;
+	color: white;
+}
+.main-details .main-details-list .paging .pagingNum span:last-child{
+	border-right: 1px solid #f5f5f5;
+}
+.main-details .main-details-list .paging .pagingNum{
+	float: right;
+}
+.main-details .main-details-list .paging-btn input{
+	width: 50px;
+	height: 32px;
+	background: #E40011;
+	border: none;
+	float: right;
+	color: white;
+	margin:0 20px;
+	cursor: pointer;
+}
+.main-details .main-details-list .total-message{
+	color: #545454;
+	float: right;
+	margin-left: 10px ;
+}
+.main-details .main-details-list .total-message input{
+	text-align: center;
+	width: 40px;
+	height: 30px;
+	margin:0 10px;
+	padding: 0;
+	
+}

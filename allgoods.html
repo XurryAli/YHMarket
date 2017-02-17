@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>全部商品</title>
+		
+		 <!--css framework -->
+		<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-main.css" />
+		<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/main-page.css"/>
+		<!-- auto js -->
+		<link rel="stylesheet" type="text/css" href="common/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="common/page-common.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/paginationjs-master/dist/pagination.css">
+		<link rel="stylesheet" type="text/css" href="css/allgoods.css"/>
+		
+		
+		<!--js plugin -->
+		<script type="text/javascript" src="libs/jquery/jquery-2.1.1.min.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/jquery.validate.min.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/jquery.validate.extend.methods.js" ></script>
+		<script type="text/javascript" src="libs/jquery-confirm/jquery-confirm.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/messages_zh.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/jquery.metadata.js" ></script>
+		<script type="text/javascript" src="js/area.js" ></script>
+		<!-- auto js -->
+		<script type="text/javascript" src="common/page-common.js" ></script>
+		<script type="text/javascript" src="js/main-page.js" ></script>
+		<script type="text/javascript" src="libs/js/cookie.js" ></script>
+		<script type="text/javascript" src="libs/paginationjs-master/dist/pagination.js"></script>
+		<script type="text/javascript" src="js/TurnPage.js"></script>
+		<script type="text/javascript" src="js/allgoods.js"></script>
+		
+	</head>
+	<body>
+		<div class="header-load"></div>
+		
+		<div class="main-details">
+			<div class="nav-title"><span>主页</span><i class="fa fa-angle-right"></i></div>
+		
+		<div class="main-details-list">
+			<div class="left-list">
+				<ul>
+					<li>热卖推荐</li>
+					<li>
+						<div>
+							<img src="img/goodsimg/detailsgoods1.jpg" />
+						</div>
+						<div>
+							<a href="javascript:;">ABC亲柔立围日用超级薄卫生巾K83 8片</a>
+							<i>￥10.5</i>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/goodsimg/detailsgoods2.jpg" />
+						</div>
+						<div>
+							<a href="javascript:;">田趣原味牛肉粒110G</a>
+							<i>￥10.5</i>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/goodsimg/detailsgoods3.jpg" />
+						</div>
+						<div>
+							<a href="javascript:;">金兰酱油1L</a>
+							<i>￥10.5</i>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/goodsimg/detailsgoods4.jpg" />
+						</div>
+						<div>
+							<a href="javascript:;">贝奇脆萝卜108g</a>
+							<i>￥10.5</i>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="img/goodsimg/detailsgoods5.jpg" />
+						</div>
+						<div>
+							<a href="javascript:;">日康双层自动学饮杯RK3430</a>
+							<i>￥10.5</i>
+						</div>
+					</li>
+				</ul>
+			</div>
+		
+			<div class="right-list">
+				<div class="right-title">
+					<ul>
+						<li><a href="javascript:;">品牌：</a></li>
+						<li><a href="javascript:;">生鲜(160)</a></li>
+						<li><a href="javascript:;">悠自在(142)</a></li>
+						<li><a href="javascript:;">未匹配到的品牌(140)</a></li>
+						<li><a href="javascript:;">茶花(129)</a></li>
+						<li><a href="javascript:;">苏泊尔(59)</a></li>
+						<li><a href="javascript:;">伊利(53)</a></li>
+						<li><a href="javascript:;">康师傅(48)</a></li>
+						<li><a href="javascript:;">更多 +</a></li>
+					</ul>
+				</div>
+				<div class="right-sorting">
+					<ul>
+						<li>默认</li>
+						<li>销量</li>
+						<li>上架时间</li>
+						<li>好评数</li>
+						<li>价格</li>
+						<li class="chose">
+							<input type="text" placeholder="￥"/> - <input type="text" placeholder="￥"/>
+							<button class="butn">确定</button>
+							<input class="check" type="checkbox" /><span>只看有货</span>
+							<input class="check" type="checkbox" /><span>全球购</span>
+							<span>共424页/共5083条记录</span>
+						</li>
+						<li>
+							<a class="fa  fa-caret-left"></a>
+							<a class="fa  fa-caret-right"></a>
+						</li>
+						
+					</ul>
+					
+					<div class="products1">
+						<ul class="allGoods">
+							<li>
+								<img src="img/json/goodsdetails1.jpg" dk-bind="src"/>
+								<span>
+									<a href="goodsDetails.html" dk-bind="title"></a>
+								</span>
+								<i>
+									<p>￥</p>
+									<p class="priceNum" dk-bind="price"></p>
+									<p>元</p>
+								</i>
+								<b dk-bind="evaluation"></b>
+								<div class="joinCart">加入购物车</div>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+				
+				
+				
+			</div>
+		
+			<!--<div class="ui-page" id="ui-page"></div>-->
+		
+		
+			<div class="paging">
+				
+				<div class="paging-btn">
+					<input type="button" value="确定" />
+				</div>
+				<div class="total-message">
+					<span>共424页/共5083条记录,到第<input type="text" />几页</span>
+				</div>
+				<div id="wrapper">
+					    <section>
+					        <div class="data-container"></div>
+					        <div id="pagination-demo1"></div>
+					    </section>
+				</div>
+				
+			</div>
+		
+		
+		
+		</div>
+		
+		
+		
+		</div>
+		
+		
+		
+		<div class="sidebar"></div>
+	
+		<div class="footer-load"></div>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,359 @@
+
+
+.search .search-product{
+	width: 415px;
+	display: block;
+	float: right;
+}
+.empty-cart{
+	width: 1190px;
+	height: 300px;
+	border-top:2px solid #d90111 ;
+	margin: 0 auto;
+}
+.empty-cart .empty-cart-remind{
+	background: url(../img/checkout-cart_empty_05.png) no-repeat;
+	width: 600px;
+	height: 300px;
+	margin: 100px auto 0 auto;
+}
+.empty-cart .empty-cart-remind p{
+	font-size: 14px;
+	margin-left: 120px;
+	line-height: 24px;
+}
+.empty-cart .empty-cart-remind ul{
+	margin-left: 140px;
+	font-size: 12px;
+	color: #545454;
+	line-height: 24px;
+	list-style:disc;
+}
+.empty-cart .empty-cart-remind ul li span{
+	font-weight: bold;
+}
+.empty-cart .empty-cart-remind .visit-btn{
+	border: none;
+	width: 98px;
+	height: 30px;
+	background: #e40011;
+	margin: 24px auto 0 140px;
+	cursor: pointer;
+}
+.empty-cart .empty-cart-remind .visit-btn a{
+	color: white;
+	text-align: center;
+	line-height: 30px;
+}
+
+
+
+/*======================   猜你喜欢      =================*/
+
+.guest-like {
+	width: 1190px;
+	height: 350px;
+	margin: 0 auto;
+}
+.guest-like .guest-like-title{
+	width: 1190px;
+	height: 44px;
+	border-bottom: 2px solid #c0c0c0;
+}
+.guest-like .guest-like-title p{
+	color: #656565;
+	font-size: 16px;
+	line-height: 44px;
+	float: left;
+}
+.guest-like .guest-like-title ul{
+	float: right;
+}
+.guest-like .guest-like-title ul li{
+	cursor: pointer;
+	float: left;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 24px;
+}
+.guest-like .guest-like-list ul{
+	margin-top: 18px;
+}
+.guest-like .guest-like-list ul li{
+	width: 164px;
+	height: 250px;
+	margin:0 40px ;
+	float: left;
+}
+.guest-like .guest-like-list ul li img{
+	width: 160px;
+	height: 168px;
+	margin: 4px auto;
+}
+.guest-like .guest-like-list ul li:last-child{
+	margin: 0;
+}
+.guest-like .guest-like-list ul li a span{
+	color: black;
+	line-height: 34px;
+	display: block;
+	margin-left: 10px;
+}
+.guest-like .guest-like-list ul li a span:hover{
+	color: #e0221c;
+}
+.guest-like .guest-like-list ul li i{
+	color: #e0221c;
+	margin-left: 10px;
+	display: block;
+}
+
+
+
+
+
+
+
+/*======================  有商品的购物车       ======================*/
+
+.payment-process{
+	width: 580px;
+	height: 50px;
+	float: right;
+	margin-top:48px ;
+}
+.payment-process div{
+	float: left;
+}
+.payment-process div span{
+	display: block;
+	float: left;
+	padding: 5px 25px;
+	margin:0 5px -10px 5px;
+	color: #c6c2c1;
+	font-size: ;
+	border-bottom: 1px solid #e40011;
+}
+.payment-process div i{
+	display: block;
+	float: right;
+	width: 34px;
+	height: 34px;
+	border-radius:50%;
+	background: #ebedec;
+	text-align: center;
+	font-family: "Microsoft YaHei","arial";
+	line-height: 34px;
+	font-size: 16px;
+	color: white;
+	margin-top: 5px;
+}
+.payment-process .step1 span{
+	color: #7d7d7d;
+}
+.payment-process .step1 i{
+	border: 1px solid #e40011;
+	background: white;
+	color: #e40011;
+}
+.payment-process .icon-cart{
+	background: url(../img/icon_cart.png) no-repeat;
+	width: 39px;
+	height: 50px;
+	position: 10px 0;
+	background-position-y: 8px;
+}
+
+
+.listOfCart .listOfCart-title{
+	margin: 0 auto;
+	width: 1190px;
+	height: 54px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #545454;
+	line-height: 54px;
+	border-bottom: 4px solid #e40011;
+}
+.listOfCart .directory{
+	margin: 0 auto;
+	width: 1190px;
+	height: 43px;
+	background: #f2f2f2;
+}
+.listOfCart .directory ul li{
+	float: left;
+	margin: 0 60px;
+	line-height: 43px;
+	color: #545454;
+}
+.listOfCart .directory ul li:first-child{
+	margin:0 250px;
+}
+.listOfCart .listOfCart-title2{
+	margin: 0 auto;
+	width: 1190px;
+	height: 39px;
+	font-size: 12px;
+	font-weight: bold;
+	color:#545454;
+	line-height: 39px;
+	border-bottom: 1px solid #e40011;
+}
+.listOfCart .listOfCart-title2 i{
+	margin:0 13px;
+	vertical-align: middle;
+}
+.listOfCart .listOfCart-title2 span{
+	vertical-align: middle;
+}
+/*===========================   购物车商品    ============================>>>>*/
+
+
+.goodsDetails ul{
+	margin: 0 auto;
+}
+.goodsDetails ul li{
+	display: block;
+	width: 1190px;
+	height: 127px;
+	background: #fdf2d8;
+	border-bottom: 1px solid #ccc;
+	margin: 0 auto;
+}
+.goodsDetails ul li img{
+	width: 80px;
+	height: 80px;
+}
+.goodsDetails ul li div{
+	float: left;
+}
+.goodsDetails ul li .checkThis{
+	width: 12px;
+	height: 12px;
+	margin: 45px 0 0 10px;
+}
+.goodsDetails ul li .thisImg{
+	width: 80px;
+	height: 80px;
+	margin: 20px 0 0 20px;
+}
+.goodsDetails ul li .thisTitle{
+	width: 250px;
+	height: 32px;
+	line-height: 32px;
+	text-indent: 12px;
+	margin-top: 25px;
+}
+.goodsDetails ul li .thisTitle span{
+	display: block;
+}
+.goodsDetails ul li .thisTitle i{
+	display: block;
+	color: #545454;
+}
+.goodsDetails ul li .thisState{
+	width: 30px;
+	height: 32px;
+	line-height: 32px;
+	margin-top: 25px;
+	color: #7d7d7d;
+}
+.goodsDetails ul li .thisPrice{
+	width: 50px;
+	height: 32px;
+	line-height: 32px;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 25px 0 0 180px;
+	color: #545454;
+}
+.goodsDetails ul li .addGoods{
+	margin: 12px 0 0 90px;
+}
+.goodsDetails ul li .addGoods a{
+	line-height: 32px;
+	display: block;
+	float: left;
+	padding:0 10px;
+	border: 1px solid #e4e4e4;
+	margin-top: 10px;
+	background: #fff;
+}
+.goodsDetails ul li .addGoods input{
+	padding: 0;
+	width: 50px;
+	height: 32px;
+	text-align: center;
+	display: block;
+	float: left;
+	margin-top: 10px;
+}
+.goodsDetails ul li .totalPrice{
+	font-size: 25px;
+	line-height: 32px;
+	margin: 22px 0 0 50px;
+	color: #E40011;
+	font-weight: bold;
+}
+.goodsDetails ul li .deleteLi{
+	float: right;
+	margin: 25px 95px 0 0 ;
+	cursor: pointer;
+}
+
+.listOfCart .amount{
+	width: 1190px;
+	height: 60px;
+	background: #f2f2f2;
+	border: 1px solid #d7d7d7;
+	margin: 30px auto;
+	line-height: 60px;
+}
+.listOfCart .amount .bottomOpera{
+	margin:0 13px;
+	vertical-align: middle;
+}
+.listOfCart .amount .bottomOpera span{
+	vertical-align: middle;
+	margin: 0 10px;
+}
+.listOfCart .amount .bottomOpera .outerCheck{
+	vertical-align: middle;
+}
+.listOfCart .amount .bottomOpera a{
+	color: #545454;
+	vertical-align: middle;
+	margin: 0 10px;
+}
+.listOfCart .amount .bootom-total{
+	
+	width: 350px;
+	height: 60px;
+	float: right;
+	
+}
+.listOfCart .amount .bootom-total em{
+	vertical-align: middle;
+}
+.listOfCart .amount .bootom-total span b{
+	vertical-align: middle;
+	color: #E40011;
+	font-size: 25px;
+	font-weight: bold;
+}
+.listOfCart .amount .settlement{
+	width: 120px;
+	height: 40px;
+	color: white;
+	font-size: 16px;
+	line-height: 40px;
+	background: #E40011;
+	letter-spacing: 5px;
+	border: none;
+	cursor: pointer;
+	float: right;
+	margin-top:10px ;
+}

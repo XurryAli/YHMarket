@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>永辉微店•会员登录</title>
+		 <!--css framework -->
+		<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-main.css" />
+		
+		<!-- auto js -->
+		<link rel="stylesheet" type="text/css" href="common/common.css"/>
+		<link rel="stylesheet" type="text/css" href="common/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		
+		<!--js plugin -->
+		<script type="text/javascript" src="libs/jquery/jquery-2.1.1.min.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/jquery.validate.min.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/jquery.validate.extend.methods.js" ></script>
+		<script type="text/javascript" src="libs/jquery-confirm/jquery-confirm.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/messages_zh.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/jquery.metadata.js" ></script>
+		
+		<!-- auto js -->
+		<script type="text/javascript" src="libs/js/jquery.cookie.js" ></script>
+		
+		
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				var getUser = $.cookie("username")
+            	console.log(getUser)
+            	var getPass = $.cookie("password")
+            	console.log(getPass)
+            	$('.username').val(getUser)
+            	$('.password').val(getPass)
+				
+			
+	            $('.login-btn').click(function () {
+//cookie存储用户信息======================================================================>	            	
+//	            	console.log($('.username').val() + "  " + $('.password').val())
+	            	var $username = $('.username').val();
+	            	var $pass = $('.password').val()
+       
+					 if($('.check').is(":checked")){
+	                		
+		                	if($.cookie("exist") == null || $.cookie("exist") == "undefined") {  
+			                    //创建cookies对象并且给其赋值，设置了生命周期为7天  
+			                    $.cookie("username", $username, { expires: 7, path:"/"});  
+			                    $.cookie("password", $pass, { expires: 7 ,path:"/"});
+			                }  
+		                	
+		                }
+					
+	                //$('form').valid() => 触发表单验证，返回 true|false， true 表示验证通过
+	                if ($(this).closest('form').valid()) {
+	                    //表单验证通过后跟 api 进行 交互
+	                    $.get('table.json', $('form').serialize(), function (response) {
+	                        if (response) {
+	                            response = typeof response == 'string' ? JSON.parse(response) : response;
+	                            if (response.status) {
+	                                setTimeout(function(){
+//				                		window.location.href = "login.html"
+				                	},3000)
+	                            } else {
+	                                $.alert(response.message);
+	                            }
+	                        }
+	                    });
+	                    
+	                    
+	                }
+	                
+	                
+	                $(document).ajaxSend(function () {
+					    if ($('.mask')[0]) {
+					        $('.mask').show();
+					    } else {
+					       $('<div class="mask"><i class="fa fa-spinner fa-pulse"></i><span>登录成功，正在跳转...</span></div>').appendTo('body').show();
+					    	setTimeout(function() {
+					    		window.location.href = "main-page.html";
+					    	}, 2000);
+					    }
+					})
+	                
+	                
+	                
+	                //阻止浏览器的默认行为，效果等同 event.preventDefault()
+	                return false;
+	                
+	                
+	           })
+	            
+	            
+		        $(document).ready(function(){
+				// 在键盘按下并释放及提交后验证提交表单
+				  $(".form-register").validate({
+				  	//验证规则
+					    rules: {
+					      username: {
+					        required: true,
+					        minlength: 2
+					      },
+					      password: {
+					        required: true,
+					        rangelength:[6,10],
+					      },
+					     
+					    },
+					    //验证错误提示
+					    messages: {
+					      username: {
+					        required: "*请输入用户名",
+					        minlength: "*用户名必需由两个以上字母组成"
+					      },
+					      password: {
+					        required: "*请输入密码",
+					        minlength: "*密码长度不能小于 6个字母"
+					      },
+					     
+					    },
+		
+					});
+				});	
+				
+			})
+			
+			
+		</script>
+	</head>
+	<body>
+		<div class="main-header"></div>
+		<div class="main-login">
+		<form class="form-login">
+			<legend class="form-login-title">用户登录</legend>
+			<ul>
+				<li class="login-text">
+					<p class="login-remind">账户名：</p>
+					<input type="text" name="username" class="form-control username required"  />
+				</li>
+				<li class="login-text">
+					<p class="login-remind">密码：<a href="#">忘记密码？</a></p>
+					<input type="password" name="password" class="form-control password required" />
+				</li>
+				<li>
+					<input type="checkbox" name="check" class="check" />	
+					<span class="login-remenber">记住账户名</span>
+				</li>
+				<li>
+					<input type="button" class="login-btn" value="登录"/>
+				</li>
+				<li class="account-operation">
+					<i><a href="register.html">免费注册</a></i>
+				</li>
+			</ul>
+			<div class="login-link">
+				<p class="cooperation-text">使用合作的网站账号登录：</p>
+				<div class="cooperation-link">
+					<a href="http://www.baidu.com"><b></b><p>百度</p></a>
+					<a href="http://im.qq.com"><i></i><p>QQ</p></a>
+					<a href="https://weixin.qq.com"><span></span><p>微信</p></a>
+				</div>
+			</div>
+		</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,113 @@
+/*<====================================注册页面样式===================================>>>*/
+
+label.error{
+	display: block;
+	position: absolute;
+	/*right: 0;*/
+	font-size: 12px;
+	float: left;
+	margin-left:80px ;
+	line-height: 20px;
+	color: red;
+}
+.main-register{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	top: 88px;
+	right: 0;
+	background: #f2f2f2;
+}
+.form-register{
+	width: 600px;
+	height: 400px;
+	margin: 40px auto;
+}
+.form-register li{
+	position: relative;
+	height: 58px;
+	/*padding-top: 15px;*/
+}
+.form-register .form-title{
+	height: 38px;
+	font-size: 22px;
+	font-weight: bold;
+	color: #545454;
+	line-height: 38px;
+	text-align: center;
+	border-bottom: 1px solid #d7d7d7;
+	margin-bottom: 40px;
+}
+.form-register .form-list{
+	width: 338px;
+	height: 400px;
+	margin: 0 auto;
+}
+.form-register .form-remind{
+	/*position: absolute;
+	right: 275px;*/
+	line-height: 38px;
+	color: #545454;
+}
+.form-register .form-remind span{
+	color: red;
+}
+.form-register .form-group input{
+	width: 260px;
+	height: 36px;
+	display: block;
+	float: right;
+	text-indent: 10px;
+	color: #a9a9a9;
+	font-size:12px ;
+	padding: 0;
+	border: 1px solid #d7d7d7;
+}
+.form-register .form-group input.code{
+	margin-right:100px ;
+	width: 160px;
+}
+.form-register .check .form-check{
+	display: block;
+	float: left;
+	margin:12px 0 0 77px;
+	
+}
+.form-register .check span{
+	color: #545454;
+	line-height: 38px;
+	display: block;
+	float: right;
+}
+.form-register .check span a{
+	padding-left: 10px;
+	color: black;
+	text-decoration: underline;
+}
+.form-register .get-code{
+	position: absolute;
+	right: 0;
+	width: 98px;
+	height: 36px;
+	border: 1px solid #d7d7d7;
+	background: #f2f2f2;
+	text-align: center;
+	font-size: 12px;
+	letter-spacing: 4px;
+	line-height: 38px;
+	color: #545454;
+	cursor: pointer;
+}
+
+.form-register .form-submit .btn{
+	display: block;
+	float: right;
+	width: 260px;
+	height: 38px;
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+	border: none;
+	background: #ddd;
+	outline-color: #ccc;
+}

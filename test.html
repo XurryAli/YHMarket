@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>YuGiOh</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+    onload = function ()
+    {
+        var obox = document.getElementById ("box");
+        var odiv = document.getElementById ("div1");
+        var ach = odiv.getElementsByTagName ("input");
+        obox.onclick = function ()
+        {
+            for ( var i = 0; i < ach.length; i++)
+            {
+                ach[i].checked = this.checked;
+            }
+        };
+         
+        for ( var i = 0; i < ach.length; i++)
+        {
+            ach[i].onclick = function ()
+            {
+                if ( !this.checked )
+                {
+                    obox.checked = false;
+                }
+                 
+                var flag = true;
+                for ( var i = 0; i < ach.length; i++)
+                {
+                    if (!ach[i].checked)
+                    {
+                        flag = false;
+                        break;
+                    }
+                }
+                if (flag)
+                {
+                    obox.checked = true;
+                }
+            };
+        }
+    }
+</script>
+</head>
+<body>
+    <label><input id="box" type="checkbox" />全选</label>
+     
+    <div id="div1">
+        <label><input type="checkbox" />1</label><br /> 
+        <label><input type="checkbox" />2</label><br />
+        <label><input type="checkbox" />3</label><br />
+        <label><input type="checkbox" />4</label><br />
+    </div>
+</body>
+</html>

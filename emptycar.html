@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<!--css framework -->
+		<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-main.css" />
+		<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css"/>
+		<!-- auto js -->
+		<link rel="stylesheet" type="text/css" href="common/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="common/page-common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/car.css"/>
+		
+		<!--js plugin -->
+		<script type="text/javascript" src="libs/jquery/jquery-2.1.1.min.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/jquery.validate.min.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/jquery.validate.extend.methods.js" ></script>
+		<script type="text/javascript" src="libs/jquery-confirm/jquery-confirm.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/messages_zh.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/jquery.metadata.js" ></script>
+		<!-- auto js -->
+		<script type="text/javascript" src="js/sidebar.js" ></script>
+		
+		
+		
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				$('.footer-load').load("footer.html?" + Math.random())
+				
+				
+				
+				//=================   手机永辉   ================>>>
+				$('.mobile-YH').mouseenter(function(){
+					$(this).css({background:"white"})
+					$('.mobile-qr').show()
+				}).mouseleave(function(){
+					$('.mobile-qr').hide()
+					$(this).css({background:"#f2f2f2"})
+					
+				})
+				
+				$('.guest-paging li').click(function(){
+					$(this).siblings().css({background:"",color:"black"})
+					$(this).css({background: "#e50112",color:"white"})
+				})
+				
+				
+				
+				
+			})
+			
+			
+		</script>
+		
+		
+		
+	</head>
+	<body>
+			
+		<div class="header">
+			<div class="header-link">
+				<ul class="header-left">
+					<li>Hi,欢迎来永辉超市</li>
+					<li><a href="login.html">登录</a></li>
+					<li><a href="register.html">免费注册</a></li>
+				</ul>
+				
+				<div class="mobile-qr"><img src="img/Qr-code3.jpg" /></div>
+				
+				<ul class="header-right">
+					<li><a href="#">我的永辉</a></li>
+					<li class="mobile-YH"><a href="#">手机永辉</a></li>
+					<li><a href="#">帮助中心</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="search">
+			
+			<div class="search-logo">
+				<a href="main-page.html"><img src="img/logo.jpg" /></a>
+			</div>
+			
+			<div class="search-product">
+				<i class="icon-search"></i>
+				<input type="text" name="search-product" id="search-product" placeholder="请输入关键字" /><button class="search-button">搜索</button>
+			</div>
+			
+		</div>
+	
+	
+	<!--=========================   空购物车       ===========================-->
+	
+		<div class="empty-cart">
+			<div class="empty-cart-remind">
+				<p>亲，您的购物车还是空的哦~你可能：</p>
+				<ul>
+					<li>还没有将商品加入购物车，马上去逛逛吧！</li>
+					<li>选购的商品在当前配送门店已被抢光，换个<span>收货地址</span>或者<span>自提门店</span>试试吧！</li>
+				</ul>
+				<button class="visit-btn"><a href="main-page.html">去逛逛</a></button>
+			</div>
+		</div>
+		
+		<div class="guest-like">
+			<div class="guest-like-title">
+				<p>猜你喜欢</p>
+				<ul class="guest-paging">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</div>
+			<div class="guest-like-list">
+				<ul>
+					<li><a href="javascript:;"><img src="img/shopingcar/guestlike1.jpg" /><span>梅塔糟菜75g</span></a><i>￥0.9元</i></li>
+					<li><a href="javascript:;"><img src="img/shopingcar/guestlike2.jpg" /><span>旺旺小馒头16g</span></a><i>￥1元</i></li>
+					<li><a href="javascript:;"><img src="img/shopingcar/guestlike3.jpg" /><span>馋嘴猴上汤鸡汁味豆腐</span></a><i>￥1元</i></li>
+					<li><a href="javascript:;"><img src="img/shopingcar/guestlike4.jpg" /><span>馋嘴猴香辣朝天椒味豆</span></a><i>￥1元</i></li>
+					<li><a href="javascript:;"><img src="img/shopingcar/guestlike5.jpg" /><span>国圣芥菜75g</span></a><i>￥1元</i></li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		<!--=========================  侧边信息栏   =======================-->
+		
+		<div class="sidebar">
+			<a  href="#"><div><img src="img/fixed1.png" /></div></a>
+			<a  href="#"><div><img src="img/fixed2.png" /></div></a>
+			<a  href="#"><div><img src="img/fixed3.png" /></div></a>
+			<a  href="#"><div><img src="img/bottom-fixednav4.png" /></div></a>
+			<a  href="#"><div><img src="img/bottom-fixednav5.png" /></div></a>
+			
+			<div class="qr-app">
+				<img src="img/Qr-code1.png" />
+				<span>永辉手机APP</span>
+			</div>
+			<div class="qr-triangle">
+				<img src="img/bottom-fixednav7.png" />
+			</div>
+		</div>
+		
+		<div class="footer-load"></div>
+	</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--css framework -->
+		<link rel="stylesheet" href="libs/bootstrap/css/bootstrap-main.css" />
+		<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css"/>
+		<!-- auto js -->
+		<link rel="stylesheet" type="text/css" href="common/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="common/page-common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/car.css"/>
+		
+		<!--js plugin -->
+		<script type="text/javascript" src="libs/jquery/jquery-2.1.1.min.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/jquery.validate.min.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/jquery.validate.extend.methods.js" ></script>
+		<script type="text/javascript" src="libs/jquery-confirm/jquery-confirm.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/messages_zh.js" ></script>
+		<script type="text/javascript" src="libs/jquery-validation/jquery.metadata.js" ></script>
+		<!-- auto js -->
+		<script type="text/javascript" src="js/sidebar.js" ></script>
+		<script type="text/javascript" src="libs/js/cookie.js" ></script>
+		
+		
+		
+		<script type="text/javascript">
+			
+			$(function(){
+				
+				$('.footer-load').load("footer.html?" + Math.random())
+				//=================   手机永辉   ================>>>
+				$('.mobile-YH').mouseenter(function(){
+					$(this).css({background:"white"})
+					$('.mobile-qr').show()
+				}).mouseleave(function(){
+					$('.mobile-qr').hide()
+					$(this).css({background:"#f2f2f2"})
+				})
+				
+		//===================     COOKIE的存储于取出       ==================>>>>
+		
+				var GOODSNAME = "GOODSNAME";  //cookie记录商品名字的key
+				var GOODSPRICE = "GOODSPRICE";  //cookie记录商品价格的key；
+				var GOODSIMG = "GOODSIMG"; //cookie记录商品名图片路径
+				
+				var goodsNameStr = getCookie(GOODSNAME);
+				var goodspriceStr = getCookie(GOODSPRICE);
+				var goodsImgStr = getCookie(GOODSIMG);
+				
+//				console.log(goodsImgStr);
+				
+				var goodsNameArr = [];
+				var goodsPriceArr = [];
+				var goodsImgArr = [];
+				
+				if(goodsNameStr){  //判断是否存在数据
+					goodsNameArr = goodsNameStr.split("&");
+					goodsPriceArr = goodspriceStr.split("&");
+					goodsImgArr = goodsImgStr.split("&");
+				}
+				
+				for(var i=0; i<goodsNameArr.length; i++){
+					
+//					console.log(goodsNameArr.length);
+					
+					var name = goodsNameArr[i];
+					var price = goodsPriceArr[i];
+					var img = goodsImgArr[i];
+					var html = '';
+					html += "<li><div class='checkThis'><input type='checkbox' class='checkgoods'/></div><div class='thisImg'><img src=" + img + "/></div><div class='thisTitle'><span>" + name + "</span><i>配送方式:半日达、门店自提</i></div><div class='thisState'>正常</div><div class='thisPrice'>￥<span>" + price + "</span></div><div class='addGoods'><a class='decrement' href='javascript:void(0)'>-</a><input class='addNum' type='text' value='1' /><a class='increment' href='javascript:void(0)'>+</a></div><div class='totalPrice'>￥<span>"+ price +"</span></div><div class='deleteLi'>删除</div></li>"
+//					console.log(html)
+					$('.goodsList').append(html);
+					
+				}
+				
+				
+			//刷新页面初始化商品数量	
+				$('.addNum').val(1);
+			//添加增加商品的"+"号事件	
+				$('.increment').click(function(){
+				//获取当前li里面的input框中的商品数量值
+				var $value = parseFloat($(this).prev().val())
+				//获取当前单价
+				var $uniPrice = parseFloat($(this).parent().prev().children('span').text())
+				//改变总价
+				$(this).parent().next().children('span').text(parseInt($uniPrice*($value+1)*100)/100)
+				//改变input中的数量值
+				$(this).siblings('.addNum').val($value + 1);
+				console.log($value)
+				console.log($uniPrice)
+				})
+				
+			//添加增加商品的"-"号事件
+				$('.decrement').click(function(){
+				var $value = parseFloat($(this).next().val())
+				var $uniPrice = parseFloat($(this).parent().prev().children('span').text())
+				$(this).parent().next().children('span').text(parseInt($uniPrice*($value-1)*100)/100)
+				$(this).siblings('.addNum').val($value - 1);
+					//判断商品数量是否小余一件
+					if($value <= 1 ){
+						$('.addNum').val(1);
+						$(this).parent().next().children('span').text($uniPrice);
+					}
+					
+				})
+				
+				
+				//为商品数量input框添加失去焦点事件，用于手动输入商品数量值的修改
+				
+				$('.addNum').blur(function(){
+					var $uniPrice = parseFloat($(this).parent().prev().children('span').text())
+					var $value = parseFloat($(this).val())
+					$(this).parent().next().children('span').text(parseInt($uniPrice*$value*100)/100)
+					if($value <= 1 ){
+						$(this).val(1)
+						$(this).parent().next().children('span').text($uniPrice);
+					}
+				})
+				
+			//=======================   总计      ==============================>>>
+			var total = 0;
+			for(var i=0; i<$('.totalPrice').length; i++){
+//				var num = $("input:checkbox[class='checkgoods']:checked")
+//				if($('.totalPrice').siblings('.checkThis').children('.checkgoods').is(":checked")){
+//					total += num;
+//				}
+				total += parseFloat($('.totalPrice span')[i].innerHTML);
+//				console.log(num);
+			}
+			
+			$('.combined').children('b').children('i').text(parseInt(total*100)/100)
+			
+			
+			
+			//checkbox选择事件================================>>>>
+			
+				$('.outerCheck').unbind("click").click(function(){
+					if($('.outerCheck').is(":checked")){
+					//全选
+						$('input:checkbox').each(function() {
+						    $(this).prop('checked', true);
+						});
+					
+					}
+					//反选
+					else{
+						$('input:checkbox').each(function() {
+						    $(this).prop('checked', false);
+						});
+					}
+				})
+				
+//				console.log($(".checkgoods").length);
+				var flag = true;
+				for ( var i = 0; i < $(".checkgoods").length; i++){
+		            $(".checkgoods")[i].onclick = function (){
+		                if ( !this.checked ){
+		                    $('.outerCheck').removeAttr("checked");
+		                }
+		                
+		                var flag = true;
+		                for ( var i = 0; i < $(".checkgoods").length; i++){
+		                    if (!$(".checkgoods")[i].checked){
+		                        flag = false;
+		                        break;
+		                    }
+		                }
+		                if (flag){
+		                    $('.outerCheck')[0].checked = true;
+		                }
+		            };
+		        }
+				
+				
+				
+				//删除制定购物check商品
+				$('.deleteLi').click(function(){
+					
+					$(this).parent().remove();
+					
+					console.log($(this).parent())
+					
+					removeCookie(GOODSNAME)
+					
+				})
+				
+				
+				
+					$('.deleteAll').click(function(){
+						if($('.outerCheck').is(":checked")){
+							$('.goodsList').children("li").remove();
+							removeCookie(GOODSNAME)
+						}
+					})
+				
+				
+				
+				
+				
+				
+			})
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		<div class="header">
+			<div class="header-link">
+				<ul class="header-left">
+					<li>Hi,欢迎来永辉超市</li>
+					<li><a href="login.html">登录</a></li>
+					<li><a href="register.html">免费注册</a></li>
+				</ul>
+				
+				<div class="mobile-qr"><img src="img/Qr-code3.jpg" /></div>
+				
+				<ul class="header-right">
+					<li><a href="#">我的永辉</a></li>
+					<li class="mobile-YH"><a href="#">手机永辉</a></li>
+					<li><a href="#">帮助中心</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="search">
+			
+			<div class="search-logo">
+				<a href="main-page.html"><img src="img/logo.jpg" /></a>
+			</div>
+			
+			<div class="payment-process">
+				<div class="icon-cart"></div>
+				<div class="step1"><span>我的购物车</span><i>1</i></div>
+				<div class="step2"><span>填写核对订单信息</span><i>2</i></div>
+				<div class="step3"><span>成功提交订单</span><i>3</i></div>
+			</div>
+			
+		</div>
+	
+		<!---======================  有商品的购物车       ======================-->
+		
+		<div class="listOfCart">
+	
+			<div class="listOfCart-title">我的购物车</div>
+			<div class="directory">
+				<ul>
+					<li>商品简介</li>
+					<li>单价</li>
+					<li>数量</li>
+					<li>金额(元)</li>
+					<li>操作</li>
+				</ul>
+			</div>
+			<div class="listOfCart-title2"><i class="fa fa-home fa-2x"></i><span>永辉福建福州市--黎明店订单商品</span></div>
+			<div class="goodsDetails">
+				<ul class="goodsList">
+					<!--<li>
+						<div class="checkThis"><input type="checkbox" class="checkgoods"/></div>
+						<div class="thisImg"><img src="img/goodsimg/detailsgoods4.jpg"/></div>
+						<div class="thisTitle">
+							<span>比目鱼</span><i>配送方式:半日达、门店自提</i>
+						</div>
+						<div class="thisState">正常</div>
+						<div class="thisPrice">￥<span>20.50</span></div>
+						<div class="addGoods">
+							<a class="decrement" href="javascript:void(0)">-</a>
+							<input class="addNum" type="text" value="1"/>
+							<a class="increment" href="javascript:void(0)">+</a>
+						</div>
+						<div class="totalPrice">￥<span>20.5</span></div>
+						<div class="deleteLi">删除</div>
+					</li>-->
+				</ul>
+			</div>
+			
+			<div class="amount">
+				<div class="bottomOpera">
+					<input type="checkbox" class="outerCheck"/>
+					<span>全选</span>
+					<a href="javascript:;" class="deleteAll">删除</a>
+					<div class="bootom-total">
+						<span class="combined"><em>合计(不含运费)：</em><b>￥<i>0</i>元</b></span>
+						<button class="settlement">提交结算</button>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+		<!--=========================  侧边信息栏   =======================-->
+		
+		<div class="sidebar">
+			<a  href="#"><div><img src="img/fixed1.png" /></div></a>
+			<a  href="#"><div><img src="img/fixed2.png" /></div></a>
+			<a  href="#"><div><img src="img/fixed3.png" /></div></a>
+			<a  href="#"><div><img src="img/bottom-fixednav4.png" /></div></a>
+			<a  href="#"><div><img src="img/bottom-fixednav5.png" /></div></a>
+			
+			<div class="qr-app">
+				<img src="img/Qr-code1.png" />
+				<span>永辉手机APP</span>
+			</div>
+			<div class="qr-triangle">
+				<img src="img/bottom-fixednav7.png" />
+			</div>
+		</div>
+		
+		<div class="footer-load"></div>
+		
+		
+	</body>
+</html>

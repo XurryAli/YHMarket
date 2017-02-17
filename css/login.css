@@ -1,0 +1,148 @@
+
+
+/*<====================================登录页面样式===================================>>>*/
+.error{
+	color: red;
+	margin-left:40px ;
+}
+.main-login{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	top: 88px;
+	right: 0;
+	background: url(../img/contentImage.png) no-repeat;
+	background-position: 202px 129px;
+}
+.main-login .form-login{
+	position: absolute;
+	top:40px;
+	right: 208px;
+	width: 380px;
+	height: 432px;
+	border: 1px solid #f1f1f1;
+	background: #f8f8f8;
+}
+.main-login .form-login li.login-text{
+	height: 90px;
+	
+}
+.main-login .form-login .login-remind{
+	width: 298px;
+	height: 12px;
+}
+.main-login .form-login .login-remind a{
+	color: #7d7d7d;
+	margin-left: 180px;
+}
+.main-login .form-login .login-remind a:hover{
+	color: red;
+}
+.main-login .form-login .form-login-title{
+	width: 380px;
+	height: 83px;
+	font-size: 22px;
+	font-family: "微软雅黑";
+	color: #545454;
+	line-height: 83px;
+	text-align: center;
+}
+.main-login .form-login ul li p{
+	font-size: 12px;
+	padding-left:40px ;
+}
+.main-login .form-login ul li input.form-control{
+	display: block;
+	width: 298px;
+	height: 30px;
+	border: 1px solid #e0221c;
+	margin: 4px auto;
+}
+.main-login .form-login ul li .check{
+	margin: 0;
+	width: 14px;
+	height: 14px;
+	margin-left: 40px;
+	vertical-align:middle;
+}
+.main-login .form-login ul li .login-remenber{
+	vertical-align:middle;
+}
+.main-login .form-login ul li .login-btn{
+	background: #e0221c;
+	color: white;
+	border: none;
+	display: block;
+	width: 298px;
+	height: 30px;
+	margin: 6px auto;
+}
+.main-login .form-login ul .account-operation{
+	width: 298px;
+	height: 30px;
+	margin: 0 auto;
+}
+.main-login .form-login ul .account-operation a{
+	line-height: 30px;
+	color: #7d7d7d;
+}
+.main-login .form-login ul .account-operation a:hover{
+	color: red;
+}
+.main-login .form-login ul .account-operation i{
+	display: block;
+	float: right;
+}
+.main-login .form-login .login-link{
+	margin: 6px auto;
+	width: 360px;
+	height: 80px;
+	border-top: 1px dashed #ccc;
+}
+.main-login .form-login .login-link p.cooperation-text{
+	margin: 15px 0 0 33px;
+	color: ##7d7d7d;
+}
+.main-login .form-login .login-link .cooperation-link{
+	width: 225px;
+	height: 18px;
+	margin:12px 0 0 33px ;
+	
+}
+.main-login .form-login .login-link b{
+	display: block;
+	width: 18px;
+	height: 18px;
+	background: url(../img/baidu-logo.jpg) no-repeat;
+	float: left;
+	
+} 
+.main-login .form-login .login-link i{
+	display: block;
+	width: 18px;
+	height: 18px;
+	background: url(../img/qq-logo.png) no-repeat;
+	float: left;
+	
+} 
+.main-login .form-login .login-link span{
+	display: block;
+	width: 18px;
+	height: 18px;
+	background: url(../img/weixin-logo.jpg) no-repeat;
+	float: left;
+}
+.main-login .form-login .login-link a{
+	display: block;
+	width: 54px;
+	height: 18px;
+	color: #7d7d7d;
+	margin-right:16px ;
+	float: left;
+}
+.main-login .form-login .login-link a p{
+	margin-left:25px ;
+	line-height: 18px;
+	width: 50px;
+	height: 18px;
+}
